@@ -1,0 +1,58 @@
+@PART[bluedog_Saturn_Engine_F1]:FINAL {
+	MODULE
+	{
+		name = ModuleB9PartSwitch
+		switcherDescription = Engine Plume
+		switcherDescriptionPlural = Engine Plumes
+		affectDragCubes = False
+		affectFARVoxels = False
+		moduleID = engineSwitch
+		SUBTYPE
+		{
+			name = Kerolox
+			title = Kerelox Plume
+			primaryColor = #53686F
+			secondaryColor = #53686F
+			descriptionSummary = Default Plume
+			defaultSubtypePriority = 1
+		}
+	 	SUBTYPE
+		{
+			name = Ethalox
+			title = Ethalox Plume
+			primaryColor = #586F53
+			secondaryColor = #586F53
+			descriptionSummary = Ethalox Plume
+			defaultSubtypePriority = 0
+			MODULE
+			{
+				IDENTIFIER
+				{
+					name = ModuleEnginesFX
+				}
+			}
+			MODULE
+			{
+				IDENTIFIER
+				{
+					name = ModuleWaterfallFX
+					moduleID = F1
+				}
+				DATA
+				{
+					TEMPLATE
+					{
+						// This is the name of the template to use
+						templateName = waterfall-ethalox-sustainer-1
+						// This field allows you to override the parentTransform name in the EFFECTS contained in the template
+						overrideParentTransform = thrustTransform
+						// scale the templated effect
+position = 0,0,0
+rotation = 0, 0, 0
+scale = 1.9, 1.9, 1.5
+					}
+				}
+			}
+		}
+	}
+}
